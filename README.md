@@ -92,11 +92,33 @@ SELECT * FROM cats WHERE owner_id = 2;
 You should see just one cat returned to us, the one that belongs to Sophie, our second owner:
 
 ```sql
+3|Nona|4|Tortoiseshell|2
+```
+
+That output isn't so great. We can tell Sqlite to print output in a way that's friendlier
+to humans.
+
+At the prompt enter:
+
+```text
+sqlite> .headers on
+sqlite> .mode column
+```
+
+Repeating the request:
+
+```sql
+SELECT * FROM cats WHERE owner_id = 2;
+```
+
+
+```sql
 id               name             age         breed          owner_id        
 ---------------  ---------------  ----------  -------------  ----------
 3                Nona             4           Tortoiseshell  2
 ```
 
+("_Whew!_," say our eyes)
  
 ## Code Along I: INNER JOIN
 
